@@ -1,7 +1,7 @@
 /**
  * @module
  *
- * Вспомогательный класс для директивы match
+ * Match directive helper class, like css selector
  */
 
 let TYPE_INDEX         = Symbol(),
@@ -9,7 +9,7 @@ let TYPE_INDEX         = Symbol(),
     TYPE_PERIODIC_AN_B = Symbol(),
     TYPE_EVERY         = Symbol();
 
-class MatchSelector {
+class Selector {
     constructor(expr) {
         this._params = {a: null, b: null};
 
@@ -65,6 +65,6 @@ class MatchSelector {
     }
 }
 
-MatchSelector.MAX_PRIORITY = 3;
+Selector.MAX_PRIORITY = 3;
 
-module.exports = MatchSelector;
+module.exports = Selector;
