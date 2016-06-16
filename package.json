@@ -1,0 +1,19 @@
+{
+  "name": "@combinejs/match-directive",
+  "version": "0.1.0",
+  "description": "combinejs match directive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/combinejs/match-directive.git"
+  },
+  "author": "spat.ne.hochu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/combinejs/match-directive/issues"
+  },
+  "homepage": "https://github.com/combinejs/match-directive#readme"
+}
