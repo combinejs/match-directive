@@ -49,7 +49,7 @@ class Selector {
                 return index === this._params.a;
 
             case TYPE_RIGHT_INDEX:
-                return ctxNode._content.length + this._params.a === index;
+                return ctxNode.getChilds().length + this._params.a === index;
 
             case TYPE_PERIODIC_AN_B:
                 let n = (index - this._params.b) / this._params.a;
