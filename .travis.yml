@@ -11,5 +11,8 @@ node_js:
 before_script:
   - "npm i -D"
 
+script:
+  - "npm run coverage"
+
 after_script:
   - "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
