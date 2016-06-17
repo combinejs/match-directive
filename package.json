@@ -4,7 +4,8 @@
   "description": "combinejs match directive",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/combinejs/match-directive#readme",
   "devDependencies": {
     "@combinejs/node": "^0.1.1",
+    "chai": "^3.5.0",
     "istanbul": "^0.4.3",
     "mocha": "^2.5.3"
   }

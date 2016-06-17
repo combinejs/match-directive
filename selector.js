@@ -39,7 +39,7 @@ class Selector {
                 this._priority = 0;
                 break;
             default:
-                throw 'invalid match expression';
+                throw new Error('invalid match expression');
         }
     }
 
