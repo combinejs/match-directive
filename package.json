@@ -17,6 +17,9 @@
     "url": "https://github.com/combinejs/match-directive/issues"
   },
   "homepage": "https://github.com/combinejs/match-directive#readme",
+  "dependencies" : {
+    "@combinejs/node": "^0.1.1"
+  },
   "devDependencies": {
     "@combinejs/node": "^0.1.1",
     "chai": "^3.5.0",
