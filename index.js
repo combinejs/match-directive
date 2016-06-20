@@ -6,7 +6,7 @@
  * узла в дереве на которое накладывается примесь
  */
 
-let Selector = require('./selector.js');
+let Selector = require('./lib/selector.js');
 
 class MatchDirective {
     constructor(value) {
@@ -58,7 +58,7 @@ function matchChildNodes(node, index) {
             let selector = childNode.getDirective('match').selector;
 
             if (selector.test(index, node)) {
-                priorityBuckets[selector.priority].push(childNode)
+                priorityBuckets[selector.priority].push(childNode);
             }
         }
     }

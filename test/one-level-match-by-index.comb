@@ -1,0 +1,10 @@
+OneLevelMatchByIndex
+
+    child1
+      rule.match  = '1'
+
+    child2
+      rule.match  = '2'
+
+    child3
+      rule.match  = '3'
