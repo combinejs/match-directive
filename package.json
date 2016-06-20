@@ -1,6 +1,6 @@
 {
   "name": "@combinejs/match-directive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "combinejs match directive",
   "main": "index.js",
   "scripts": {
@@ -17,13 +17,22 @@
     "url": "https://github.com/combinejs/match-directive/issues"
   },
   "homepage": "https://github.com/combinejs/match-directive#readme",
-  "dependencies" : {
+  "dependencies": {
     "@combinejs/node": "^0.1.1"
   },
   "devDependencies": {
     "@combinejs/node": "^0.1.1",
+    "@combinejs/parser": "^0.2.0",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
     "istanbul": "^0.4.3",
     "mocha": "^2.5.3"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "History.md",
+    "Readme.md",
+    "index.js",
+    "lib/"
+  ]
 }
