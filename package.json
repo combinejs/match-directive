@@ -1,6 +1,6 @@
 {
   "name": "@combinejs/match-directive",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "combinejs match directive",
   "main": "index.js",
   "scripts": {
