@@ -1,35 +1,30 @@
 /* global before, beforeEach, describe, it */
 
 const assert          = require('chai').assert,
+      fs              = require('fs'),
       MatchDirective  = require('../index'),
+      combineParse    = require('@combinejs/parser');
       CombineNode     = require('@combinejs/node');
 
-let rootNode, childs;
 
-beforeEach(function() {
-    rootNode = new CombineNode('Root');
-    childs = [];
+require('@combinejs/directives-provider').define('match', MatchDirective);
 
-    for (let i = 0; i < 5; ++i) {
-        childs[i] = new CombineNode('child_' + i);
-        rootNode.addChild(childs[i]);
+describe('MatchDirective testing', function() {
 
-        for (let k = 0; k < 5; ++k) {
-            let subChild = new CombineNode(`child_${i}_${k}`);
-            childs[i].addChild(subChild);
-        }
-    }
-});
+    describe('match by one-level tree with index rule', function() {
 
-describe('match by index selector', function() {
-    let rootNode = new CombineNode('Root');
-    rootNode.addChild();
+        let tree = combineParse(fs.readFileSync('./test/one-level-match-by-index.comb').toString());
 
-    describe('test 1', function() {
+        it('find second child by rule match=2', function() {
+            let [node] = MatchDirective.matchNodeByPath(tree, [1]);
+            assert.equal(node.name, 'child2');
+        });
 
-        it('instance', function() {
-            let match = new MatchDirective('2');
-            assert.equal(match.selector.priority, 3);
+        it('find N-child by rule match=N', function() {
+            for (let index = 0; index < 3; ++index) {
+                let [node] = MatchDirective.matchNodeByPath(tree, [index]);
+                assert.equal(node.name, `child${(index+1)}`);
+            }
         });
     });
 });
