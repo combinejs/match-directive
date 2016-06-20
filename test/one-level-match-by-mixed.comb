@@ -1,0 +1,13 @@
+OneLevelMatchByMixed
+
+    priority3
+      rule.match  = '2'
+
+    priority2
+      rule.match  = '-1'
+
+    priority1
+      rule.match  = '2n'
+
+    priority0
+      rule.match  = '*'
