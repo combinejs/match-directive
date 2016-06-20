@@ -14,8 +14,8 @@ class MatchDirective {
     }
 }
 
-MatchDirective.matchNodeByPath = function(rootNode, path) {
-    return matchNodeByPath([rootNode], path);
+MatchDirective.matchNodeByPath = function(mixinRoot, path, destRoot) {
+    return matchNodeByPath([mixinRoot], path, destRoot);
 };
 
 module.exports = MatchDirective;
@@ -27,17 +27,19 @@ module.exports = MatchDirective;
  *
  * @param nodeList {CombineNode[]}       узлы в порядке возврастания приоритетам
  * @param path {Number[]} path      адрес узла (последовательность индексов на каждом уровне дерева)
+ * @param destRoot {CombineNode}
  *
  * @returns {CombineNode[]}              найденные узлы по возврастанию приоритета
  */
-function matchNodeByPath(nodeList, path) {
+function matchNodeByPath(nodeList, path, destRoot) {
     if (nodeList.length === 0 || path.length === 0) return nodeList;
 
     return matchNodeByPath(
         Array.prototype.concat.apply([], nodeList.map(
-            node => matchChildNodes(node, path[0])
+            node => matchChildNodes(node, path[0], destRoot)
         )),
-        path.slice(1)
+        path.slice(1),
+        destRoot.getChilds()[path[0]]
     );
 }
 
@@ -47,17 +49,18 @@ function matchNodeByPath(nodeList, path) {
  *
  * @param node {CombineNode}     узел, среди прямых потомков которого будем искать
  * @param index {Number}    позиция предпологаемого элемента
+ * @param ctxNode {CombineNode}
  *
  * @returns {CombineNode[]}      найденные узлы по возврастанию приоритета
  */
-function matchChildNodes(node, index) {
+function matchChildNodes(node, index, ctxNode) {
     let priorityBuckets = new Array(Selector.MAX_PRIORITY + 1).fill(1).map(()=>[]);
 
     for (let childNode of node.getChilds()) {
         if (childNode.hasDirective('match')) {
             let selector = childNode.getDirective('match').selector;
 
-            if (selector.test(index, node)) {
+            if (selector.test(index, ctxNode)) {
                 priorityBuckets[selector.priority].push(childNode);
             }
         }
