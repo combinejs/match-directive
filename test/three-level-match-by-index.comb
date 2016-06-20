@@ -1,0 +1,100 @@
+ThreeLevelMatchByIndex
+
+    child1
+      rule.match  = '1'
+
+        child11
+          rule.match  = '1'
+
+            child111
+              rule.match  = '1'
+            child112
+              rule.match  = '2'
+            child113
+              rule.match  = '3'
+
+        child12
+          rule.match  = '2'
+
+            child121
+              rule.match  = '1'
+            child122
+              rule.match  = '2'
+            child123
+              rule.match  = '3'
+
+        child13
+          rule.match  = '3'
+
+            child131
+              rule.match  = '1'
+            child132
+              rule.match  = '2'
+            child133
+              rule.match  = '3'
+
+    child2
+      rule.match  = '2'
+
+        child21
+          rule.match  = '1'
+
+            child211
+              rule.match  = '1'
+            child212
+              rule.match  = '2'
+            child213
+              rule.match  = '3'
+
+        child22
+          rule.match  = '2'
+
+            child221
+              rule.match  = '1'
+            child222
+              rule.match  = '2'
+            child223
+              rule.match  = '3'
+
+        child23
+          rule.match  = '3'
+
+            child231
+              rule.match  = '1'
+            child232
+              rule.match  = '2'
+            child233
+              rule.match  = '3'
+
+    child3
+      rule.match  = '3'
+
+        child31
+          rule.match  = '1'
+
+            child311
+              rule.match  = '1'
+            child312
+              rule.match  = '2'
+            child313
+              rule.match  = '3'
+
+        child32
+          rule.match  = '2'
+
+            child321
+              rule.match  = '1'
+            child322
+              rule.match  = '2'
+            child323
+              rule.match  = '3'
+
+        child33
+          rule.match  = '3'
+
+            child331
+              rule.match  = '1'
+            child332
+              rule.match  = '2'
+            child333
+              rule.match  = '3'
