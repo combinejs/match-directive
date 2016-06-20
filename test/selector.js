@@ -2,10 +2,10 @@
 
 const assert      = require('chai').assert,
       expect      = require('chai').expect,
-      Selector    = require('../selector'),
+      Selector    = require('../lib/selector'),
       CombineNode = require('@combinejs/node');
 
-describe('MatchSelector', function() {
+describe('Selector testing', function() {
 
     describe('TYPE_INDEX', function() {
 
